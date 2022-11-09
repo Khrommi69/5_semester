@@ -1,13 +1,12 @@
 package com.company; //пакет файлов с которым можно работать
 
+import java.util.Scanner;
+
 //основная программа
 public class Main {
-
     //основная функция (начало программы)
     public static void main(String[] args) {
         //Это комментарий - однострочный
-        /*Это тоже
-                    комментарий, только многострочный*/
         //Вывод строк и использование спец символов
         System.out.println("Hello world!\nЯ начал изучать Java");
         System.out.println("\\\\новая строка \t\t -_- \n");
@@ -36,8 +35,6 @@ public class Main {
 
         // булевый тип данных [true, false]
         boolean isIt = true;
-
-        // Данные от пользователя. Математические действия
     }
 
 }
