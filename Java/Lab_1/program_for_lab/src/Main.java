@@ -17,15 +17,18 @@ public class Main {
         //Проверка на наличие аргументов коммандной строки
         String inputFile = "";
         String outputFile = "";
-        for (int i = 0; i < args.length; i++) {
-            //если есть флаг -i то следующий аргумент коммандной строки это название input файла
-            if (args[i].equals("-i"))
-                inputFile = args[++i];
-            //если есть флаг -o то следующий аргумент коммандной строки это название output файла
-            else if (args[i].equals("-o"))
-                outputFile = args[++i];
+        try {
+            for (int i = 0; i < args.length; i++) {
+                //если есть флаг -i то следующий аргумент коммандной строки это название input файла
+                if (args[i].equals("-i"))
+                    inputFile = args[++i];
+                    //если есть флаг -o то следующий аргумент коммандной строки это название output файла
+                else if (args[i].equals("-o"))
+                    outputFile = args[++i];
+            }
+        } catch (ArrayIndexOutOfBoundsException e) {
+            System.err.println("Ошибка при работе с аргументами командной строки");
         }
-
         //если есть флаг -i попытка открыть файл с входным значением
         if (!inputFile.isEmpty()) {
             try {
