@@ -1,5 +1,8 @@
 import eel
-import tkinter import *
+#import tkinter import *
 
-eel.init("web")
-eel.start("main.html")
+import Tkinter
+Tkinter._test()
+
+#eel.init("web")
+#eel.start("main.html")
