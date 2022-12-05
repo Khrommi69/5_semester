@@ -6,7 +6,15 @@
 
 #IncludeRegexTransform: 
 
-C:/Users/Danil_KHR/Desktop/Git/5_semester/Software testing/Lab_1/Program/main.cpp
+D:/5_semester/Software testing/Lab_1/Program/main.cpp
 iostream
+-
+iomanip
+-
+algorithm
+-
+fstream
+-
+cstring
 -
 
