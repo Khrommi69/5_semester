@@ -13,7 +13,9 @@ public class ArbitraryClass extends CreatingBuffer implements IBufferComputable,
 	//выводит на экран идентификатор, тип и размер буфера
 	@Override
 	public void PrintInfo() {
-		
+		System.out.println("Идентификатор буфера: " + getBudID());
+		System.out.println("Тип буфера: " + "long");
+		System.out.println("Размер буфера: " + getBufSize());
 	}
 	
 	//выводит на экран содержимое буфера
