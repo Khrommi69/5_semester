@@ -1,0 +1,130 @@
+Abstract - это конспект (eng)
+
+КОЛЛЕКЦИИ
+
+для работы с коллекциями нужно сделать "import java.util.*;"
+коллекции это что то типа массива, только мы не задаёём размер при создании, размер может быть безграничным
+Collection - это интерфейс
+/*
+	Collection colection = new ArrayList();
+	                           имя коллекции
+*/
+
+основные методы: size(); add(); iterator(); remove();
+вспомогательный: toArray();
+
+(есть ещё класс Collections и класс Arrays. У них больше методов.)
+
+colection.add(Какой нибудь объект); //добавляет объект в коллекцию
+collection.remove(какой нибудь объект); //исключает объект из коллекции
+collection.add("1");
+collection.add("2");
+collection.remove("2");
+
+есть такая прекрасная вещь как итератор, которая позволяет пройтись по всей коллекции
+Iterator iterator = collection.iterator();
+while (iterator.hasNext()) {   
+	System.out.println(iterator.next());
+}
+//iterator - это объект у которого есть несколько методов
+hasNext() - проверяет есть ли следующий элемент
+next() - возвращает элемент
+
+вместо while можно пробегать по коллекции следующим образом: (этот цикл тоже работает на основе итераторов)
+for (Object o: collection){
+	System.out.println(o);
+}
+
+основные интерфейсы которые наследуются от коллекций:
+List collection1 = new ArrayList();
+Set collection2 = new HashSet();
+Queue collection3 = new PrioritQueue();
+Map map = new HashMap();
+
+---------------------
+ArrayList();
+collection.set(index, "object"); //устанавливает значение по индексу
+collection.get(index); //возвращает элемент по индексу
+collection.add("object"); //добавляет объект
+collection.size(); //возвращает кол-во элементов в коллекции (списке-массиве)
+collection.add(index, "jbject"); //ставит на укзаанный индекс какой то объект, при этом все остальные объекты смещаются на единицу вперёд по индексации
+
+----------------------
+Queue collection = new PriorityQueue();
+collection.add("object"); //добавляет объект
+collection.peek(); //извлечь элемент из очереди
+collection.poll(); //извлечь элемент из очереди и удалить его в очереди
+colection.offer("object"); //тоже добавляет объект
+
+---------
+Set - это множество (содержит не повторяющиеся объекты)
+Set collection = new HashSet();
+collection.add("object"); //добавляет объект
+
+----------
+Map - отдельный интерфейс. У него нет метода add(). Map - это штука работающая как ключ - значение
+Map collection = new HashMap();
+collection.size();
+collection.isEmpty(); //пустая ли map
+collection.get(key); //вывод значения по ключу
+collection.put(key, "value"); //добавить в map ключ и объект
+collection.remove();
+
+как пробежаться по Map?
+Set set = collection.entrySet();
+for(Object o : set) {
+	System.out.println(o);
+}
+
+-----------------
+Все коллекции бывают неупорядоченные, упорядоченные и отсортированные
+HashSet - неупорядоченная коллекция. Значит мы не знаем в какой последовательности они выведутся при использовании итератора
+LinkedHashSet - упорядоченная коллекция. В какой последовательности элементы добавляются, в такой они и выведутся
+TreeSet - отсортированная коллекция. В любом варианте выведет отсортированную последовательность
+
+ 
+ ----------------------------
+ По поводу файлов
+ import java.io.*;
+ для работы с файлами есть 6 основных классов
+ самый простой класс для работы с файлами это File
+ File file = new File("someFile.txt");
+ file.isFile();    //проверка является ли файл файлом
+ file.isDirectory; //проверка является ли файл директорией
+ file.exists();     //проверка на то, существует ли файл
+ file.mkdir();      //создаёт дирректорию с указанным именем (someFile.txt в нашем случае будет названа дирректория)
+ file.createNewFile(); //создаёт файл с указанным именем (...)
+ 
+ есть класы FileReader и FileWriter которые созданы чтобы читать и записывать в файлы
+ FileWriter fileWriter = new FileWriter(file или "имя файла");
+ fileWriter.write("someString/n"); //запись строки в файл
+ после записи в файл нужно делать:
+ fileWriter.flush(); fileWriter.close();
+ FileReader fileReader = new FileReader(file или "имя файла");
+ char[] ourReadableFile = new char[999]; //создание массива символов в который будет считываться файл
+ fileReader.read(ourReadableFile); //считываение файла
+ System.out.print(ourReadableFile); //вывод содержимого файла на экран
+ 
+ эт всё не оч удобно
+ поэтому есть BufferReader и BufferWriter
+ BufferWriter bufferWriter = new BufferWriter(fileWriter);
+ bufferWriter.write("SomeString fscds"); //в конце писать /n не надо
+ bufferWriter.newLine(); //вот так надо на новую строку переводить
+ bufferWriter.flush(); bufferWriter.close();
+ 
+ BufferReader bufferReader = new BufferReader(fileReader);
+ while (bufferReader.ready()) {                  //пока файл не закончился
+ 	System.out.println(bufferReader.readLine()); //считывать файл построчно
+ }
+
+
+
+
+
+
+
+
+
+
+
+
