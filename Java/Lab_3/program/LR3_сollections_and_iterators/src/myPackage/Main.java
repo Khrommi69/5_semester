@@ -6,6 +6,7 @@ import java.util.Scanner;
 public class Main {
 
 	private static String inputFileName;
+	private static String field1;
 	
 	//попытка извлечь из аргументов командной строки имя файла, иначе ручками будем вбивать
 	public static void initializationFileName(String[] args) {
@@ -38,31 +39,66 @@ public class Main {
 		System.out.print("Введите имя файла со входными данными -> ");
 		inputFileName = scan.nextLine();
 		scan.close();
+		System.out.print("We are here");
+	}
+	
+	public static String enteringAutorName () {
+		Scanner scan = new Scanner(System.in);
+		System.out.print("Введите значение поля 1 (имя автора) -> ");
+		String str = scan.nextLine();
+		scan.close();
+		return str;
 	}
 	
 	public static void main(String[] args) {
 
-//		initializationFileName(args);
+		//инициализация имени файла со входными параметрами (если есть то извлечь из аргумента коммандной строки)
+		initializationFileName(args);
 		
-		//коллекция типа TreeSet() (отсортированная коллекция)
-		FirstTask collection1 = new FirstTask();
-
-		collection1.add(new Book("Danil", 2003, 12345, "Makeevka"));
-//		collection1.readFile(inputFileName);
+		//Ввод записей из файла в коллекцию TreeSet (множество отсортированное)
+//		тут метод(ы) добавления
+		
+		//отобразить записи в консоли
 //		collection1.print();
+		
+		//предложить пользователю ввести значение поля 1 (String autor;)
+		field1 = enteringAutorName();
+		System.out.println("Поле 1 - " + field1);
+		
+		//Проверка наличия объекта в коллекции TreeSet с таким полем
+//		тут код
+		
+		//Ввести записи из файла заданного параметром командной строки –i в коллекцию LinkedList.
+		//Отобразить записи в консоли. 
+		//Отсортировать по полю 1.
+		//Отобразить записи в консоли.
+		//Отсортировать по полю 3 (колво страниц) в направлении по убыванию.
+		//Отобразить записи в консоли.
+		//Вывести записи в файл, заданный параметром командной строки –o.
+		
+		//Ввести записи из файла заданного параметром командной строки –i в коллекцию TreeMap.
+		//Отобразить записи в консоли.
+		//Предложить пользователю ввести значение поля 1.
+		//Отобразить в консоли значения остальных полей по введенному значению поля 1.
+		
+		
+		
+
 	}
 
 }
 
 
 
+
+
+//коллекция типа TreeSet() (отсортированная коллекция)
+//FirstTask collection1 = new FirstTask();
+//
+//collection1.add(new Book("Danil", 2003, 12345, "Makeevka"));
+//collection1.readFile(inputFileName);
+
+
+
 //Book testObject = new Book("Danil", 2003, 12345, "Makeevka");
 //testObject.printBook();
-
-
-
-//Реализовать коллекцию типа TreeSet объектов класса Book
-//с возможностью ввода элементов из файла,
-//(метод который берёт на вход коллекцию и файл, и переносит данные из файла в коллекцию)
-//вывода на консоль,
-//(Вывод всех элементов коллекции на экран)
