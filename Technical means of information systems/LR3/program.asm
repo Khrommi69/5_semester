@@ -28,7 +28,7 @@ f PROC
     MOV CX, 0                              ;+4
                                            ;+4
     RET
-f END
+f ENDP
 
 .data
     f_c dw ?
