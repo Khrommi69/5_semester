@@ -1,25 +1,25 @@
 import Interfaces.*;
 import java.io.*;
 
-//произвольный класс, унаследованный от класса CreatingBuffer
-//реализующий методы интерфейсов необходимых для выполнения задания в соответствии с вариантом
+//РїСЂРѕРёР·РІРѕР»СЊРЅС‹Р№ РєР»Р°СЃСЃ, СѓРЅР°СЃР»РµРґРѕРІР°РЅРЅС‹Р№ РѕС‚ РєР»Р°СЃСЃР° CreatingBuffer
+//СЂРµР°Р»РёР·СѓСЋС‰РёР№ РјРµС‚РѕРґС‹ РёРЅС‚РµСЂС„РµР№СЃРѕРІ РЅРµРѕР±С…РѕРґРёРјС‹С… РґР»СЏ РІС‹РїРѕР»РЅРµРЅРёСЏ Р·Р°РґР°РЅРёСЏ РІ СЃРѕРѕС‚РІРµС‚СЃС‚РІРёРё СЃ РІР°СЂРёР°РЅС‚РѕРј
 
 public class ArbitraryClass extends CreatingBuffer implements IBufferComputable, IBufferPrintable, IBufferSortable, IBufferStorable {
 	
-	//конструктор с параметром
+	//РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ СЃ РїР°СЂР°РјРµС‚СЂРѕРј
 	ArbitraryClass(int bufSize) {
 		super(bufSize);
 	}
 	
-	//выводит на экран идентификатор, тип и размер буфера
+	//РІС‹РІРѕРґРёС‚ РЅР° СЌРєСЂР°РЅ РёРґРµРЅС‚РёС„РёРєР°С‚РѕСЂ, С‚РёРї Рё СЂР°Р·РјРµСЂ Р±СѓС„РµСЂР°
 	@Override
 	public void PrintInfo() {
-		System.out.println("Идентификатор буфера: " + getBudID());
-		System.out.println("Тип буфера: " + "long");
-		System.out.println("Размер буфера: " + bufSize);
+		System.out.println("Buf_id: " + getBudID());
+		System.out.println("Buf_type: " + "long");
+		System.out.println("Buf_size: " + bufSize);
 	}
 	
-	//выводит на экран содержимое буфера
+	//РІС‹РІРѕРґРёС‚ РЅР° СЌРєСЂР°РЅ СЃРѕРґРµСЂР¶РёРјРѕРµ Р±СѓС„РµСЂР°
 	@Override
 	public void Print() {
 		for (int i = 0; i < bufSize; i++) {
@@ -28,7 +28,7 @@ public class ArbitraryClass extends CreatingBuffer implements IBufferComputable,
 		System.out.println();
 	}
 	
-	//выводит на экран первые n элементов буфера
+	//РІС‹РІРѕРґРёС‚ РЅР° СЌРєСЂР°РЅ РїРµСЂРІС‹Рµ n СЌР»РµРјРµРЅС‚РѕРІ Р±СѓС„РµСЂР°
 	@Override
 	public void PrintFirstN(int n) {
 		for (int i = 0; i < n; i++) {
@@ -37,7 +37,7 @@ public class ArbitraryClass extends CreatingBuffer implements IBufferComputable,
 		System.out.println();
 	}
 	
-	//выводит на экран последние n элементов буфера
+	//РІС‹РІРѕРґРёС‚ РЅР° СЌРєСЂР°РЅ РїРѕСЃР»РµРґРЅРёРµ n СЌР»РµРјРµРЅС‚РѕРІ Р±СѓС„РµСЂР°
 	@Override
 	public void PrintLastN(int n) {
 		for (int i = bufSize-n; i < bufSize; i++) {
@@ -46,7 +46,7 @@ public class ArbitraryClass extends CreatingBuffer implements IBufferComputable,
 		System.out.println();
 	}
 	
-	//описывает метод для сортировки массива
+	//РѕРїРёСЃС‹РІР°РµС‚ РјРµС‚РѕРґ РґР»СЏ СЃРѕСЂС‚РёСЂРѕРІРєРё РјР°СЃСЃРёРІР°
 	@Override
 	public void Sort() {
 		long temp;
@@ -64,7 +64,7 @@ public class ArbitraryClass extends CreatingBuffer implements IBufferComputable,
 		}
 	}
 	
-	//вычисляет максимальный элемент буфера
+	//РІС‹С‡РёСЃР»СЏРµС‚ РјР°РєСЃРёРјР°Р»СЊРЅС‹Р№ СЌР»РµРјРµРЅС‚ Р±СѓС„РµСЂР°
 	@Override
 	public void Max() {
 		long max = buffer[0];
@@ -73,10 +73,10 @@ public class ArbitraryClass extends CreatingBuffer implements IBufferComputable,
 				max = buffer[i];
 			}
 		}
-		System.out.println("Максимальный элемент буфера = " + max);
+		System.out.println("Max buf element = " + max);
 	}
 	
-	//вычисляет минимальный элемент буфера
+	//РІС‹С‡РёСЃР»СЏРµС‚ РјРёРЅРёРјР°Р»СЊРЅС‹Р№ СЌР»РµРјРµРЅС‚ Р±СѓС„РµСЂР°
 	@Override
 	public void Min() {
 		long min = buffer[0];
@@ -85,20 +85,20 @@ public class ArbitraryClass extends CreatingBuffer implements IBufferComputable,
 				min = buffer[i];
 			}
 		}
-		System.out.println("Минимальный элемент буфера = " + min);
+		System.out.println("РњРёРЅРёРјР°Р»СЊРЅС‹Р№ СЌР»РµРјРµРЅС‚ Р±СѓС„РµСЂР° = " + min);
 	}
 	
-	//вычисляет сумму элементов буферa
+	//РІС‹С‡РёСЃР»СЏРµС‚ СЃСѓРјРјСѓ СЌР»РµРјРµРЅС‚РѕРІ Р±СѓС„РµСЂa
 	@Override
 	public void Sum() {
 		long sum = 0;
 		for (int i = 0; i < bufSize; i++) {
 			sum += buffer[i];
 		}
-		System.out.println("Сумма элементов буфера = " + sum);
+		System.out.println("РЎСѓРјРјР° СЌР»РµРјРµРЅС‚РѕРІ Р±СѓС„РµСЂР° = " + sum);
 	}
 	
-	//сохраняет буфер в файл в одну строку
+	//СЃРѕС…СЂР°РЅСЏРµС‚ Р±СѓС„РµСЂ РІ С„Р°Р№Р» РІ РѕРґРЅСѓ СЃС‚СЂРѕРєСѓ
 	@Override
 	public void SaveOneLine(String filename) {
 		try {
@@ -114,7 +114,7 @@ public class ArbitraryClass extends CreatingBuffer implements IBufferComputable,
 		}
 	}
 	
-	//сохраняет буфер в файл по одному элементу в строке
+	//СЃРѕС…СЂР°РЅСЏРµС‚ Р±СѓС„РµСЂ РІ С„Р°Р№Р» РїРѕ РѕРґРЅРѕРјСѓ СЌР»РµРјРµРЅС‚Сѓ РІ СЃС‚СЂРѕРєРµ
 	@Override
 	public void SaveSeparateLines (String filename) {
 		try {

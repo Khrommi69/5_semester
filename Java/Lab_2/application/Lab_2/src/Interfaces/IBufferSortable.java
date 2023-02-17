@@ -1,6 +1,6 @@
 package Interfaces;
 
-//описывает метод для сортировки массива
+//РѕРїРёСЃС‹РІР°РµС‚ РјРµС‚РѕРґ РґР»СЏ СЃРѕСЂС‚РёСЂРѕРІРєРё РјР°СЃСЃРёРІР°
 
 public interface IBufferSortable {
 	public void Sort();
