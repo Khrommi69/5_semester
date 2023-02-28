@@ -1,5 +1,10 @@
 {
     "opened_images": [
-        "C:/Users/USER/Desktop/PhotoEditorPython/resources/tree1.jpg"
+        "C:/Users/Danil_KHR/Desktop/git/5_semester/Image Processing/PhotoEditor_python_Spizjeno/resources/beach.jpg",
+        "C:/Users/Danil_KHR/Desktop/git/5_semester/Image Processing/PhotoEditor_python_Spizjeno/resources/tree2.jpg"
+    ],
+    "last_viewed_images": [
+        "C:/Users/Danil_KHR/Desktop/git/5_semester/Image Processing/PhotoEditor_python_Spizjeno/resources/beach.jpg",
+        "C:/Users/Danil_KHR/Desktop/git/5_semester/Image Processing/PhotoEditor_python_Spizjeno/resources/tree2.jpg"
     ]
 }
