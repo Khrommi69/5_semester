@@ -45,18 +45,13 @@ void matrix_output(int **matrix, size_t N) {
     }
 }
 
-bool is_the_matrix_positive_definite(int **matrix, size_t N) {
-    //положительно определённая матрица: невырожденная матрица B, что A = B^T·B
-    //невырожденная матрица - матрица определитель которой != 0
-    //B^T - транспонирование матрица - строки меняются на столбцы (матрицу как будто перевернули дном вверх)
-    //не могу понять как работает положительно определенная матрица поэтому просто узнаю невырожденная она или нет
-    bool isMPV = false;
+void is_the_matrix_positive_definite(int **matrix, size_t N) {
+    //Квадратная матрица называется вырожденной (true), если её определитель равен нулю
+    //и невырожденной (false), если её определитель не равен нулю.
     size_t determinant = matrix[0][0]*matrix[1][1]*matrix[2][2] + matrix[0][1]*matrix[1][2]*matrix[2][0] + matrix[0][2]*matrix[1][0]*matrix[2][1]
                        - matrix[0][2]*matrix[1][1]*matrix[2][0] - matrix[0][1]*matrix[1][0]*matrix[2][2] - matrix[0][0]*matrix[1][2]*matrix[2][1];
-    //если матрица вырожденная то (условно) матрица положительно определённая
-    if (determinant != 0) isMPV = true;
-    (isMPV == true)? std::cout << "Матрица положительно определённая" << std::endl : std::cout << "Матрица положительно не определённая" << std::endl;
-    return isMPV;
+    (determinant == 0) ? std::cout << "Матрица вырожденная" << std::endl
+                       : std::cout << "Матрица не вырожденная" << std::endl;
 }
 
 
@@ -75,30 +70,20 @@ void work_with_matrix() {
     matrix = entering_a_square_matrix(N);
     //Вывод матрицы
     matrix_output(matrix, N);
-    //определение того, является ли матрица положительно определённой
-    bool isMPV = is_the_matrix_positive_definite(matrix, N);
+    //определение того, является ли матрица вырожденной
+    is_the_matrix_positive_definite(matrix, N);
     //очистка памяти
     matrix_destroyer(matrix, N);
     system("pause");
 }
 
 void work_with_string() {
-//    getchar();
-//    std::string s;
-//    std::cout << "Введите строку:" << std::endl;
-//    std::cin >> s;
-//    //преобразование строки в массив символов для работы с символами
-//    char str[s.length() + 1];
-//    s.copy(str, s.length() + 1);
-
 
     getchar();
     std::string s;
     std::cout << "Введите строку:" << std::endl;
     std::cin >> s;
     //преобразование строки в массив символов для работы с символами
-//    char *str = new char [s.length()+1];
-//    strcpy (str, s.c_str());
     char *str = const_cast<char*>(s.c_str());
 
     //обработка строки
@@ -165,18 +150,3 @@ int main() {
     } while (num != 4);
     return 0;
 }
-
-
-
-
-//приколюхи
-//#include <limits>
-//std::cout <<  sizeof(size_t) << std::endl;
-//std::cout << std::numeric_limits<size_t>::max() << std::endl;
-//std::cout << std::numeric_limits<size_t>::min() << std::endl;
-//std::cout <<  sizeof(unsigned long) << std::endl;
-//std::cout << std::numeric_limits<unsigned long>::max() << std::endl;
-//std::cout << std::numeric_limits<unsigned long>::min() << std::endl;
-//std::cout <<  sizeof(unsigned long long) << std::endl;
-//std::cout << std::numeric_limits<unsigned long long>::max() << std::endl;
-//std::cout << std::numeric_limits<unsigned long long>::min() << std::endl;

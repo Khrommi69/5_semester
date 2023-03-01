@@ -1,3 +1,3 @@
-D:/5_semester/Software testing/Lab_1/Program/cmake-build-debug/CMakeFiles/Program.dir
-D:/5_semester/Software testing/Lab_1/Program/cmake-build-debug/CMakeFiles/edit_cache.dir
-D:/5_semester/Software testing/Lab_1/Program/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+C:/Users/Danil_KHR/Desktop/git/5_semester/Software testing/Lab_1/Program/cmake-build-debug/CMakeFiles/Program.dir
+C:/Users/Danil_KHR/Desktop/git/5_semester/Software testing/Lab_1/Program/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/Danil_KHR/Desktop/git/5_semester/Software testing/Lab_1/Program/cmake-build-debug/CMakeFiles/rebuild_cache.dir

@@ -1,4 +1,4 @@
-# Install script for directory: D:/5_semester/Software testing/Lab_1/Program
+# Install script for directory: C:/Users/Danil_KHR/Desktop/git/5_semester/Software testing/Lab_1/Program
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -40,5 +40,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "D:/5_semester/Software testing/Lab_1/Program/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "C:/Users/Danil_KHR/Desktop/git/5_semester/Software testing/Lab_1/Program/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
