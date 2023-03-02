@@ -1,0 +1,3 @@
+C:/Users/Danil_KHR/Desktop/git/5_semester/Software testing/Lab_3/App/cmake-build-debug/CMakeFiles/App.dir
+C:/Users/Danil_KHR/Desktop/git/5_semester/Software testing/Lab_3/App/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/Danil_KHR/Desktop/git/5_semester/Software testing/Lab_3/App/cmake-build-debug/CMakeFiles/rebuild_cache.dir
