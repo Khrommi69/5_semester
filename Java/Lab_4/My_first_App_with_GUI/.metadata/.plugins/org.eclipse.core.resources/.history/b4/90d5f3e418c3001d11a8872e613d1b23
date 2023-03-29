@@ -1,0 +1,7 @@
+import javax.swing.*;
+
+
+public class App {
+	JFrame gui = new JFrame () {};
+	gui.setVisible(true);
+}
