@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lab 3</title>
+
+  <style>
+    .card-form {
+      margin: 10px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+      padding: 5px;
+      width: auto;
+      display: inline-flex;
+      gap: 5px;
+    }
+
+    .card-form .brand {
+      width: 32px;
+      height: 32px;
+      text-align: center;
+      line-height: 32px;
+    }
+
+    .card-form input {
+      padding: 0 5px;
+      height: 32px;
+      line-height: 32px;
+      font-size: 16px;
+      border: none;
+      outline: none;
+    }
+
+    .card-form input[name="pan"] {
+      width: 160px;
+    }
+
+    .card-form input[name^="expiration"],
+    .card-form input[name="cvv"] {
+      width: 48px;
+    }
+
+  </style>
+
+  <script src="./script3.js"></script>
+</head>
+
+<body>
+  <div class="card-form">
+    <div class="brand">❌</div>
+    <input type="text" name="pan" size="16" placeholder="Номер карты">
+    <input type="text" name="expirationMonth" size="2" placeholder="Месяц">
+    <input type="text" name="expirationYear" size="2" placeholder="Год">
+    <input type="text" name="cvv" size="3" placeholder="CVV">
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/lib/css/master-styles.css" />
+  <title>Главная страница / Проект</title>
+
+  <script type="module" src="/lib/script/init_DateTimeNavbarPlaceholder.js"></script>
+  <script type="module" src="/lib/script/init_ComplexSubmenu.js"></script>
+  <script type="module">
+    import { setCurrentDocument } from "/lib/script/init_History.js"
+    setCurrentDocument("/");
+  </script>
+</head>
+
+<body>
+  <nav id="navbar">
+    <div>
+      <a class="youre-here" href="/">/</a><a href="/fotos/">/ Фотоальбом</a><a id="aboutMenuItem" href="/about/">/ О
+        проекте</a>
+    </div>
+    <div>
+      <a href="/test/">/ Тест</a>
+      <a id="datetime-placeholder"></a>
+    </div>
+  </nav>
+
+  <div id="content-container" class="flex">
+    <div id="content">
+      <div class="card">
+        <div class="card-header">
+          <h1>О проекте</h1>
+        </div>
+        <div class="card-content">
+          <img class="icon-like float-left" src="/lib/image/profile-image.png" alt="Изображение профиля" />
+          <p style="font-weight: bold;">ФИО создателя страницы: Филозоп А.Н. <a href="https://github.com/Cory7666">
+              <img style="height: var(--text-font-size);" src="/lib/image/github-icon.png" alt="GitHUB"></a></p>
+          <p style="font-weight: bold; padding-bottom: 10pt;">Группа: ИС/б-20-2-о</p>
+          <p>Разнообразный и богатый опыт высокотехнологичная концепция общественной системы позволяет выполнять важные
+            задания по разработке модели развития. Равным образом понимание сущности ресурсосберегающих технологий
+            требует определения и уточнения модели развития. Повседневная практика показывает, что курс на
+            социально-ориентированный национальный проект способствует подготовке и реализации поставленных обществом и
+            правительством задач. Идейные соображения высшего порядка, а также социально-экономическое развитие требует
+            анализа экономической целесообразности принимаемых изменений. Прежде всего курс на социально-ориентированный
+            национальный проект позволяет оценить значение представляет собой интересный эксперимент новых принципов
+            формирования материально-технической и кадровой базы. Прежде всего повышение уровня гражданского сознания
+            обеспечивает актуальность системы массового участия. Значимость этих проблем настолько очевидна, что
+            постоянное информационно-пропогандистское обеспечение нашей деятельности проверки влечёт за собой интересный
+            процесс внедрения модернизации поэтапного и последовательного развития общества. Повседневная практика
+            показывает, что повышение уровня гражданского сознания играет важную роль в формировании модели развития. Не
+            вызывает сомнений, что курс на социально-ориентированный национальный проект способствует повышению качества
+            поэтапного и последовательного развития общества. Для современного мира новая модель организационной
+            деятельности позволяет выполнять важные задания по разработке поэтапного и последовательного развития
+            общества.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <h2>История посещений за всё время</h2>
+        </div>
+        <div id="card-all-history" class="card-content">
+
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <h2>История посещений</h2>
+        </div>
+        <div id="card-current-session-history" class="card-content">
+
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

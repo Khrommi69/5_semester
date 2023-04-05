@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+    .title {
+      border: solid black 5px;
+      display: inline-block;
+      font-size: 200%;
+    }
+
+    .title::before,
+    .title::after {
+      content: "\25A0";
+      position: relative;
+      bottom: 1pt;
+      color: white;
+    }
+
+    .title::before {
+      right: 12pt;
+    }
+
+    .title::after {
+      left: 12pt;
+    }
+
+  </style>
+</head>
+
+<body>
+  <div class="title">Название</div>
+</body>
+
+</html>

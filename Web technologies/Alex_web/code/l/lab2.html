@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    /**
+ * @param template null|undefined|String|Boolean|Number|Template|Template[] Шаблон
+ *
+ * @returns String Шаблонизированная верстка
+ */
+
+    function templateEngine(template)
+    {
+      console.log(typeof (template));
+      if (template === null)
+      {
+        return "";
+      }
+
+      else if (typeof (template) == "object")
+      {
+        if (Array.isArray(template))
+        {
+          let t = template.map((value, index, array) => { return templateEngine(value); });
+          return t.join("");
+        }
+        else
+        {
+          template.tag = template.tag || "div";
+
+          let element = document.createElement(template.tag || "div");
+          if (template.cls)
+          {
+            if (typeof(template.cls) == "object")
+              template.cls.forEach((c) => {element.classList.add(c)});
+            else
+              element.classList.add(template.cls);
+          }
+          if (template.content)
+            element.innerHTML += templateEngine(template.content);
+          if (template.attrs)
+          {
+            for (let [key, value] of Object.entries(template.attrs))
+            {
+              element.setAttribute(key, value);
+            }
+          }
+          return element.outerHTML;
+        }
+      }
+
+      else
+      {
+        return template + "";
+      }
+    }
+
+    /**
+    * Объект шаблона. Здесь будут описаны поля шаблона и их возможные значения
+    *
+    * @typedef {Object} Template
+    *
+    * @property {String} [tag=div] - Тег (по умолчанию - div)
+    * @property {String|String[]} [cls] - Класс/классы тега. Необязательное поле
+    * @property {Object} [attrs] - Объект, описывающий атрибуты тега. Необязательное поле.
+    * Пример { tag: 'img', attrs: { src: '1.jpg' } } => <img src="1.jpg"/>
+    * @property {null|undefined|String|Boolean|Number|Template|Template[]} [content] - Содержимое тега
+    *
+    */
+
+    function assertTemplate(input, expected)
+    {
+      if (templateEngine(input) !== expected)
+      {
+        document.write(`Failed test ${JSON.stringify(input)}<br>${JSON.stringify(templateEngine(input))}<br>`);
+      } else
+      {
+        document.write('OK<br>');
+      }
+    }
+
+    assertTemplate('', '');
+    assertTemplate('привет', 'привет');
+    assertTemplate(null, '');
+    assertTemplate(['привет', 1], 'привет1');
+    assertTemplate({ tag: 'section', content: 'привет' }, '<section>привет</section>');
+    assertTemplate({ content: { content: {} } }, '<div><div><div></div></div></div>');
+    assertTemplate({
+      tag: 'a',
+      attrs: { href: '/', target: '_blank' },
+      cls: 'home'
+    }, '<a class="home" href="/" target="_blank"></a>');
+    assertTemplate({ tag: 'div', cls: ['c1', 'c2'] }, '<div class="c1 c2"></div>');
+
+  </script>
+</body>
+
+</html>

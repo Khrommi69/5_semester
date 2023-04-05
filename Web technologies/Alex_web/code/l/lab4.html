@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <script src="/lib/script/jquery/jquery.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", (event) =>
+    {
+      function findElements(targetSelector, closestParentSelector, childSelector)
+      {
+        let e = $(targetSelector).parentsUntil(closestParentSelector).parent().find(childSelector);
+        addElements(e);
+        return e;
+      }
+
+      function addElements(elements)
+      {
+        elements.each(index =>
+        {
+          let e = $("<li>").attr("data-id", $(elements.get(index)).data("id"));
+            console.log(e.data("id"));
+          $(e).appendTo($("#result"));
+        });
+      }
+
+      console.log(findElements('#target', '.a', '.b'));
+    });
+  </script>
+</head>
+
+<body>
+  <p>В блок <code>#result</code> неодходимо добавить элементы <code>li</code> со значениями <code>data-id</code>
+    подходящих элементов.</p>
+  <p>Подходящими элементами считаются все элементы с <code>childSelector</code>, вложенные в ближайшего предка (не
+    только непосредственные наследники) с селектором <code>closesParentSelector</code> от элемента с селектором
+    <code>targetSelector</code>
+  </p>
+
+  <ul id="result"></ul>
+
+  <div class="a" data-id="1">
+    <div class="b" data-id="2">
+      <div class="c" data-id="3">
+        <div class="a" data-id="4">
+          <div class="b" data-id="5">
+            <div class="c" data-id="6">
+              <div id="target" data-id="7"></div>
+            </div>
+          </div>
+          <div class="b" data-id="8"></div>
+          <div class="c" data-id="9"></div>
+          <div class="c" data-id="10"></div>
+          <div class="b" data-id="11"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
