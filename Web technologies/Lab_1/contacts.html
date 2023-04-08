@@ -1,0 +1,60 @@
+<!DOCTYPE html5>
+<html>
+<head>
+	<link type = "text/css" rel = "stylesheet" href = "style_main.css">
+	<meta charset="utf-8">
+	<title>main</title>
+</head>
+<body>
+	<nav class="nav_panel">
+				<ul>
+					<li><a href="main.html">Главная</a></li>
+					<li><a href="about_me.html">Обо мне</a></li>
+					<li><a href="my_interests.html">Мои интересы</a></li>
+					<li><a href="stydies.html">Учеба</a></li>
+					<li><a href="photo_album.html">Фотоальбом</a></li>
+					<li><a href="contacts.html">Контакты</a></li>
+					<li><a href="test.html">Тест</a></li>
+				</ul>
+	</nav>
+	<div class="info_segment">
+		<section class="text_main_content">
+			<h1>
+				Контакты
+			</h1>
+			<form action="mailto:noname@gmail.com" method="post" id="contact_form">
+			 <div class="input_block">
+			 <label for="name">ФИО</label>
+			 <input  type="text" name="name" />
+			 <br /></div>
+			 <div class="input_block">
+			 <label for="sex">Мужской</label>
+			 <input type="radio" name="sex" value="Мужской" />
+			 <label for="sex">Женский</label>
+			 <input  type="radio" name="sex" value="Женский" />
+			 <br /></div>
+			 <div class="input_block">
+			 <label for="ageField">Возраст</label>
+			 <input  type="number" name="age" min="16" max="96" />
+			 <br /></div>
+			 <div class="input_block">
+			 <!-- Указание почты от кого отправляется письмо-->
+			 <label for="email">Email</label>
+			 <input  type="email" name="email" placeholder="email" />
+			 <br/></div>
+			 <div class="input_block">
+			 <label for="tel">Телефон:</label>
+			 <input type="tel" name="telephone">
+			 <br/></div>
+			 <div class="input_block">
+			 <TEXTAREA NAME="messege" ROWS=10 COLS=50></TEXTAREA></div>
+			 <div id="error_box"></div>
+			 <hr />	
+			 <input type="reset" value="Очистить форму" />
+			 <input type="submit" value="Отправить" onclick="verify()" />
+			 </form>
+
+		</section>
+	</div>
+</body>
+</html>

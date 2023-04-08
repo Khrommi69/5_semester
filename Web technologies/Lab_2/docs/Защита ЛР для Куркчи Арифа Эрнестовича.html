@@ -1,0 +1,61 @@
+<!-- Исходные данные -->
+<script>
+  input = {
+    a: 1,
+    b: 1.2,
+    c: "foo",
+    d: {
+        x: {
+            y: {
+                t: 1
+            }
+        }
+    },
+    e: [{ z: 3 }, { j: { u: 23 } }],
+}
+
+<!-- РЕШЕНИЕ: -->
+//input принимает объект
+//используем префикс для преобразования объекта в строку
+//out, заполняется ключами и значениями, полученными в процессе обхода входного объекта.
+//Каждый ключ и значение объекта проверяется на тип данных с помощью оператора typeof
+//в зависимости от типа данных выполнятся соответствующее преобразование
+//Object.assign() копирует свойства из одного объекта в другой
+
+//функция f2 возвращает готовый объект out
+
+
+function f2(input, prefix) {
+  if(prefix==undefined) prefix="";
+  var out = {};
+  for (i in input){
+    switch(typeof input[i]){
+      case "number":
+        out[prefix+i] = input[i];
+        console.log(prefix+i+':'+input[i]);
+        break;
+      case "string":
+        out[prefix+i] = input[i];
+        console.log(prefix+i+':'+input[i]);
+        break;
+      case "object":
+        const res = f2(input[i], prefix+i+'.');
+        Object.assign(out, res);
+        break;
+    }
+  }
+  return out;
+}
+
+
+<!-- Чё должно выводится -->  
+console.log("Result "+wrapper(input));
+
+// {
+//     'a': 1,
+//     'b': 1.2,
+//     'c': 'foo',
+//     'd.x.y.t': 1,
+//     'e.0.z': 3,
+//     'e.1.j.u': 23
+// }

@@ -1,0 +1,66 @@
+<!DOCTYPE html5>
+<html>
+<head>
+	<link type = "text/css" rel = "stylesheet" href = "style_main.css">
+	<meta charset="utf-8">
+	<title>main</title>
+</head>
+<body>
+	<nav class="nav_panel">
+				<ul>
+					<li><a href="main.html">Главная</a></li>
+					<li><a href="about_me.html">Обо мне</a></li>
+					<li><a href="my_interests.html">Мои интересы</a></li>
+					<li><a href="stydies.html">Учеба</a></li>
+					<li><a href="photo_album.html">Фотоальбом</a></li>
+					<li><a href="contacts.html">Контакты</a></li>
+					<li><a href="test.html">Тест</a></li>
+				</ul>
+	</nav>
+	<div class="info_segment">
+		<section class="text_main_content">
+			<h1>
+				Тест
+			</h1>
+			<form action="mailto:noname@gmail.com" method="get" id="test_form">
+			 <div class="question_block">
+			 <label for="name">Студент </label><input id="name" name="name" type="text">
+			 <label for="group">Группы </label>
+			 <select name="group" id="group">
+			 <option value="is1">ИС/б-20-1-о</option>
+			 <option value="is2">ИС/б-20-2-о</option>
+			 <option value="pi">ПИ/б-20-1-о</option>
+			 </select>
+			 </div>
+			 <div class="question_block">
+			 	<p>1. Сила тока обозначается: </p>
+			 	<input type="radio" name="f_quest" value="I"><label for="1_quest">I</label>
+			 	<input type="radio" name="f_quest" value="J"><label for="1_quest">J</label>
+			 	<input type="radio" name="f_quest" value="V"><label for="1_quest">V</label>
+			 </div>
+			 <div class="question_block">
+			 	<p>2. Сопротивление не зависит от:</p>
+			 	<select name="sec_quest">
+			 		<option value="material">Материала</option>
+			 		<option value="form">Формы</option>
+			 		<option value="temperature">Животных</option>
+			 		<option value="sizes">Размеров</option>
+			 		<option value="power">Мощности</option>
+			 		<option value="temperature">Температуры</option>
+			 		<option value="temperature">Физики</option>
+			 	</select>
+			 </div>
+			 <div class="question_block">
+			 	<p>3. Первый закон Кирхгофа (Закон токов):</p>
+			 	<TEXTAREA name="third_quest" ROWS=10 COLS=50></TEXTAREA>
+			 </div>
+			 <div id="error_box"></div>
+			 <hr />	
+			 <input type="reset" value="Очистить форму" />
+			 <input type="submit" value="Отправить" onclick="verify(event)" />
+			</form>
+		</section>
+	</div>
+	<script type="text/javascript" src="scripts/test_verify.js"></script>
+</body>
+</html>

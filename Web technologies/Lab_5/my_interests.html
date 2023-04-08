@@ -1,0 +1,85 @@
+	<!DOCTYPE html5>
+<html>
+<head>
+	<script type="text/javascript">
+		function list_printer(arguments) {
+			let list=document.getElementById(list_printer.arguments[0]);
+			str='';
+			for (let i = 1; i< list_printer.arguments.length; i++  ) {
+			if (list_printer.arguments[i]!==undefined)
+				str+='<li>'+list_printer.arguments[i]+'</li>';
+			}
+			console.log('Строка:'+str);
+			list.innerHTML = str;
+		}
+	</script>
+	<link type = "text/css" rel = "stylesheet" href = "style_main.css">
+	<meta charset="utf-8">
+	<title>main</title>
+</head>
+<body>
+	<nav class="nav_panel">
+				<ul>
+					<li><a href="main.html">Главная</a></li>
+					<li><a href="about_me.html">Обо мне</a></li>
+					<li><a href="my_interests.html">Мои интересы</a></li>
+					<li><a href="stydies.html">Учеба</a></li>
+					<li><a href="photo_album.html">Фотоальбом</a></li>
+					<li><a href="contacts.html">Контакты</a></li>
+					<li><a href="test.html">Тест</a></li>
+				</ul>
+	</nav>
+		<div class="info_segment">
+			<section class="text_main_content">
+				<h1>
+					На данной странице приведена информация о моих интересах</h1>
+					<ol>
+					<li><a href="#hobbies">Хобби</a></li>
+					<li><a href="#music">Музыка</a></li>
+					<li><a href="#films">Фильмы</a></li>
+					</ol>
+			</section>	
+		</div>
+		<div class="info_segment">
+			<section class="text_main_content">
+				<h1 id="hobbies">
+					Мое хобби
+				</h1>
+				<p>
+					Мои хобби:
+					<ol id="list_hobbies">
+						<script type="text/javascript">
+							list_printer("list_hobbies" ,"Обрабатывать фотографии в программе Photoshop", "Занятия кулинарией" , "Обработка видео в видеоредакторах (Sony Vegas, Adobe Premiere Pro, Adobe After Effects)", "Игра на гитаре");
+						</script>
+					</ol>
+				</p>
+			</section>
+		</div>
+		<div class="info_segment">
+			<section class="text_main_content">
+				<h1 id="music">
+					Моя любимая музыка:
+				</h1>
+				<ul id="music_list_id">
+					<script type="text/javascript">
+						list_printer("music_list_id","ATL", "Наше последнее лето", "Noize MC", "Macan", "Цой", "...", "Я меломан");
+					</script>
+				</ul>
+			</section>
+		</div>
+		<div class="info_segment">
+			<section class="text_main_content">
+				<h1 id="films">
+					Мои любимые фильмы
+				</h1>
+				<ol id="films_list">
+					<script type="text/javascript">
+						list_printer("films_list", "Интерстеллар", "Властелин колец", "Джанго освобождённый", "Омерзительная восьмёрка", "Волк с Уолл стрит", "Синистер", "Пила", "Куб", "Начало", "Бойцовский клуб", "Назад в будущее", "Форест Гамп", "...")
+					</script>
+				</ol>
+				<br><br><br>
+				<a href="#">Наверх</a>
+			</section>
+		</div>
+</body>
+</html>
