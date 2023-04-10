@@ -1,66 +1,80 @@
 <!DOCTYPE html5>
 <html>
+
 <head>
-	<link type = "text/css" rel = "stylesheet" href = "style_main.css">
 	<meta charset="utf-8">
-	<title>main</title>
+	<!-- определяет масштабирование страницы для мобильных устройств -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link type = "text/css" rel = "stylesheet" href = "css/main_style.css">
+	<title>Тест</title>
 </head>
-<body>
-	<nav class="nav_panel">
-				<ul>
-					<li><a href="main.html">Главная</a></li>
-					<li><a href="about_me.html">Обо мне</a></li>
-					<li><a href="my_interests.html">Мои интересы</a></li>
-					<li><a href="stydies.html">Учеба</a></li>
-					<li><a href="photo_album.html">Фотоальбом</a></li>
-					<li><a href="contacts.html">Контакты</a></li>
-					<li><a href="test.html">Тест</a></li>
-				</ul>
+
+<body class="body">
+	<nav class="navigation_bar">
+		<ul>
+			<li id="home"><a href="index.html">Главная</a></li>
+			<li id="about"><a href="about_me.html">Обо мне</a></li>
+			<li id="interests"><a href="my_interests.html">Мои интересы</a></li>
+			<li id="study"><a href="study.html">Учеба</a></li>
+			<li id="photo"><a href="photo_album.html">Фотоальбом</a></li>
+			<li id="contact"><a href="contact.html">Контакт</a></li>
+			<li id="test"><a href="test.html">Тест</a></li>
+		</ul>
 	</nav>
 	<div class="info_segment">
-		<section class="text_main_content">
-			<h1>
-				Тест
-			</h1>
-			<form action="mailto:noname@gmail.com" method="get" id="test_form">
-			 <div class="question_block">
-			 <label for="name">Студент </label><input id="name" name="name" type="text">
-			 <label for="group">Группы </label>
-			 <select name="group" id="group">
-			 <option value="is1">ИС/б-20-1-о</option>
-			 <option value="is2">ИС/б-20-2-о</option>
-			 <option value="pi">ПИ/б-20-1-о</option>
-			 </select>
-			 </div>
-			 <div class="question_block">
-			 	<p>1. Сила тока обозначается: </p>
-			 	<input type="radio" name="f_quest" value="I"><label for="1_quest">I</label>
-			 	<input type="radio" name="f_quest" value="J"><label for="1_quest">J</label>
-			 	<input type="radio" name="f_quest" value="V"><label for="1_quest">V</label>
-			 </div>
-			 <div class="question_block">
-			 	<p>2. Сопротивление не зависит от:</p>
-			 	<select name="sec_quest">
-			 		<option value="material">Материала</option>
-			 		<option value="form">Формы</option>
-			 		<option value="temperature">Животных</option>
-			 		<option value="sizes">Размеров</option>
-			 		<option value="power">Мощности</option>
-			 		<option value="temperature">Температуры</option>
-			 		<option value="temperature">Физики</option>
-			 	</select>
-			 </div>
-			 <div class="question_block">
-			 	<p>3. Первый закон Кирхгофа (Закон токов):</p>
-			 	<TEXTAREA name="third_quest" ROWS=10 COLS=50></TEXTAREA>
-			 </div>
-			 <div id="error_box"></div>
-			 <hr />	
-			 <input type="reset" value="Очистить форму" />
-			 <input type="submit" value="Отправить" onclick="verify(event)" />
+		<section class="text_info_segment">
+			<h1 class="form_title">Тест</h1>
+			<form action="mailto:noname@gmail.com" method="get" class="physics_test_form">
+				<div class="test_input_block">
+					<label for="full-name">Студент</label>
+					<input type="text" name="full-name" placeholder="Иванов Иван Иванович">
+				</div>
+				<div class="test_input_block">
+					<label for="group">Группы</label>
+					<select name="group" class="group">
+						<option value="ИС/б-20-1-о">ИС/б-20-1-о</option>
+						<option value="ИС/б-20-2-о">ИС/б-20-2-о</option>
+						<option value="ПИ/б-20-1-о">ПИ/б-20-1-о</option>
+					</select>
+				</div>
+				<div class="test">
+					<ol>
+						<li class="test_input_block">
+							<label>Сила тока обозначается символом:</label>
+							<label for="I">I</label>
+							<input type="radio" id="I" name="symbol" value="I" />
+							<label for="J">J</label>
+							<input type="radio" id="J" name="symbol" value="J" />
+							<label for="V">V</label>
+							<input type="radio" id="V" name="symbol" value="V" />
+						</li>
+						<li class="test_input_block">
+							<p>Сопротивление тока не зависит от:</p>
+							<select name="resistance-independent">
+								<option value="наркотиков">наркотиков</option>
+								<option value="силы тока">силы тока</option>
+								<option value="силы воли">силы воли</option>
+								<option value="формы">формы</option>
+								<option value="свойств">свойств</option>
+								<option value="силы земли">силы земли</option>
+								<option value="сатурна">сатурна</option>
+							</select>
+						</li>
+						<li class="test_input_block">
+							<label for="message">Первый закон Кирхгофа (Закон токов):</label>
+							<textarea name="kirchhoff-law" rows=10 cols=50></textarea>
+						</li>
+					</ol>
+				</div>
+				<div class="test_error_box"></div>
+				<div class="test_button_block">
+					<input type="reset" value="Очистить форму" />
+					<input type="submit" value="Отправить" onclick="verify(event)" />
+				</div>
 			</form>
 		</section>
 	</div>
-	<script type="text/javascript" src="scripts/test_verify.js"></script>
+	<script type="text/javascript" src="js/test_check.js"></script>
+	<script type="text/javascript" src="js/main.js"></script>
 </body>
 </html>
