@@ -406,3 +406,36 @@ a:-webkit-any-link:hover {
 .physics_test_form input[type="submit"]:hover {
   background-color: #3e8e41;
 }
+
+
+/*Дата и время*/
+.date-time {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 75%;
+  line-height: 1.2;
+  text-align: center;
+}
+
+#current-date {
+  margin-right: 10px;
+}
+
+#current-time::before {
+  content: " | ";
+  margin-right: 10px;
+}
+
+#current-time {
+  font-weight: bold;
+}
+
+
+/*КАЛЕНДАРЬ*/
+#show-calendar {
+	margin-top: 5px;
+}
+
+/*Стили для "Мои интересы" - выпадающего меню*/

@@ -15,16 +15,14 @@
 		<ul>
 			<li id="home"><a href="index.html">Главная</a></li>
 			<li id="about"><a href="about_me.html">Обо мне</a></li>
-			<li id="interests"><a href="my_interests.html">Мои интересы</a></li>
-			<li><a href="my_interests.html" id="myInterestsID">Мои интересы</a>
-				<div class="dropdown">
-					<div id="myDropdown" class="dropdown-content">
-						<ul>
-							<li id="notToShow"><a href="my_interests.html#hobbies_list">Хобби</a></li>
-							<li id="notToShow"><a href="my_interests.html#music_list">Музыка</a></li>
-							<li id="notToShow"><a href="my_interests.html#films_list">Фильмы</a></li>
-						</ul>
-					</div>
+			<li class="dropdown">
+				<a href="my_interests.html" id="myInterestsID">Мои интересы</a>
+				<div class="dropdown-content">
+					<ul>
+						<li><a href="my_interests.html#hobbies_list">Хобби</a></li>
+						<li><a href="my_interests.html#music_list">Музыка</a></li>
+						<li><a href="my_interests.html#films_list">Фильмы</a></li>
+					</ul>
 				</div>
 			</li>
 			<li id="study"><a href="study.html">Учеба</a></li>
@@ -32,6 +30,10 @@
 			<li id="contact"><a href="contact.html">Контакт</a></li>
 			<li id="test"><a href="test.html">Тест</a></li>
 		</ul>
+		<div class="date-time">
+			<span id="current-date"></span>
+			<span id="current-time"></span>
+		</div>
 	</nav>
 	<div class="info_segment">
 		<section class="text_info_segment">

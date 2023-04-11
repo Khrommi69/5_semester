@@ -25,45 +25,23 @@ menuItems.forEach(item => {
 });
 
 
+//ДАТА И ВРЕМЯ
+function updateDateTime() {
+    var date = new Date();
+    var day = date.getDate();
+    var monthNames = ['января', 'февраля', 'марта', 'апреля', 'мая', 'июня', 'июля', 'августа', 'сентября', 'октября', 'ноября', 'декабря'];
+    var monthIndex = date.getMonth();
+    var year = date.getFullYear();
+    var hours = date.getHours();
+    var minutes = date.getMinutes();
+    var seconds = date.getSeconds();
 
-// ВЫПАДАЮЩЕЕ МЕНЮ ДЛЯ СТРАНИЦЫ "МОИ ИНТЕРЕСЫ"
-let interestsButton=document.querySelector("#myInterestsID");
-interestsButton.addEventListener("mouseenter", e=>dropList(e), true);
-console.log(interestsButton);
-
-var shouldBeShown=true;
-function dropList() {
-  if(!shouldBeShown)
-    return
-  else 
-    shouldBeShown=false;
-  console.log("should be dropped");
-    document.getElementById("myDropdown").classList.toggle("show");
+    document.getElementById('current-date').innerHTML = day + ' ' + monthNames[monthIndex] + ' ' + year;
+    document.getElementById('current-time').innerHTML = hours + ':' + (minutes < 10 ? '0' + minutes : minutes) + ':' + (seconds < 10 ? '0' + seconds : seconds);
 }
 
-// Close the dropdown menu if the user clicks outside of it
-window.onclick = function(event) {
-  console.log("dropdown -");
-  if (!event.target.matches('.dropbtn')) {
-    var dropdowns = document.getElementsByClassName("dropdown-content");
-    var i;
-    for (i = 0; i < dropdowns.length; i++) {
-      var openDropdown = dropdowns[i];
-      if (openDropdown.classList.contains('show')) {
-        openDropdown.classList.remove('show');
-        shouldBeShown=true;
-      }
-    }
-  }
-}
+updateDateTime();
+setInterval(updateDateTime, 1000);
 
 
-
-
-
-
-
-
-
-
-
+// для выпадающего меню вкладки "Мои интересы"
