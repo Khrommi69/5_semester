@@ -1,0 +1,61 @@
+body {
+  font-family: "Franklin Gothic", "Arial Narrow", Arial, sans-serif;
+  background-color: #004640 !important;
+  margin: 0;
+  overflow: hidden;
+}
+
+#app {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  min-width: 30%;
+  max-width: 30%;
+  max-height: 90%;
+  text-align: center;
+  padding: 2rem;
+  margin: auto;
+  margin-top: 2%;
+  border-radius: 29px;
+  border: 1px solid #004640;
+  background-color: #a9bcbb;
+}
+
+input {
+  padding: 0.5rem;
+  border-radius: 10px;
+  border: 2px solid #004640;
+  background-color: #e8ecec;
+  color: #004640;
+}
+
+label, p {
+  margin: 1rem;
+  color: #004640;
+  font-weight: bold;
+}
+
+#resultOk, #resultError {
+  padding: 0.5rem;
+  word-wrap: normal;
+  font-size: large;
+  color: #004640;
+  border-radius: 10px;
+  border: 2px solid #004640;
+}
+
+#resultError {
+  background-color: #E6B3B3;
+}
+
+#resultOk {
+  background-color: #66FFA5;
+}/*# sourceMappingURL=main.css.map */

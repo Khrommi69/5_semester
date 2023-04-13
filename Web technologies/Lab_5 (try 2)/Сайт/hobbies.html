@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <script src="jquery.js"></script>
+  <script src="menu.js" defer></script>
+  <script src="localStorageAndCookies.js"></script>
+
+  <meta charset="UTF-8">
+  <script defer src="hobbies.js"></script>
+  <link rel="stylesheet" href="style.css">
+  <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Мои интересы</title>
+</head>
+
+<body onload="updateLocalStorageAndCookies()">
+  <nav id="navHeader">
+    <ul id="navList">
+      <li> <h1> <a href="main.html"> Главная </a> </h1> </li>
+      <li> <h1> <a href="about_me.html"> Обо мне </a> </h1> </li>
+      <li> <h1> <a href="#" id="hobbiesDropdownMenu"> Мои интересы </a> </h1> </li>
+      <li> <h1> <a href="study.html"> Учёба </a> </h1> </li>
+      <li> <h1> <a href="album.html"> Фотоальбом </a> </h1> </li>
+      <li> <h1> <a href="contact.html"> Контакты </a> </h1> </li>
+      <li> <h1> <a href="test.html"> Тест по инженерной графике </a> </h1> </li>
+      <li> <h1> <a href="history.html"> История просмотра </a> </h1> </li>
+    </ul>
+  </nav>
+
+  <main class="hobbies">
+    <aside>
+      <!-- <ol>
+        <li> <h3> <a href=#hobby> Любимое хобби </a> </h3> </li>
+        <li> <h3> <a href=#music> Любимая музыка </a> </h3> </li>
+        <li> <h3> <a href=#videogames> Любимые видеоигры </a> </h3> </li>
+      </ol> -->
+    </aside>
+
+    <section class="hobbies">
+      <h1 id="hobby"> Любимое хобби </h1>
+      <p> Без сомнений, моё самое любимое увлечение - это обработка изображений в "photoshop". Очень нравится менять реальность хотя бы в цифровом формате. Ниже вы можете увидеть некоторые из моих работ </p>
+      <div id="grid1">
+        <img src="img/hobbies/hobby/СевГУ.png" alt="СевГУ">
+        <img src="img/hobbies/hobby/The last of us в СевГУ.png" alt="The last of us в СевГУ">
+        <img src="img/hobbies/hobby/dungeon master (Армейский данила).png" alt="dungeon master (Армейский данила)">
+        <img src="img/hobbies/hobby/Лёша в поезде.png" alt="Лёша в поезде">
+        <img src="img/hobbies/hobby/Андрей с сигарой 2.png" alt="Андрей с сигарой 2">
+        <img src="img/hobbies/hobby/Проживаем с Андреем последние моменты в нашей жизни.png" alt="Проживаем с Андреем последние моменты в нашей жизни">
+      </div>
+
+      <h1 id="music"> Любимая музыка </h1>
+      <p> Я люблю слушать музыку разных жанров. Зачастую именно обстановка моей жизни задаёт жанр музыки, которую я собираюсь
+        слушать. Поэтому довольно непросто выделить что-то одно. На картинках ниже я приведу обложки работ авторов,
+        которые мне интересны, на данный момент моей жизни.</p>
+      <div id="grid2">
+        <img src="img/hobbies/music/Лимб.jpg" alt="Лимб">
+        <img src="img/hobbies/music/Выход в город.jpg" alt="Выход в город">
+        <img src="img/hobbies/music/skeleton heart aysi.jpg" alt="skeleton heart aysi">
+      </div>
+
+      <h1 id="videogames"> Любимые видеоигры </h1>
+      <p> Мне нравится множество различных игр, но, увы, мне нечасто удаётся найти свободную минуту для них. Ниже приведены мои любимые игры. </p>
+      <div id="grid3">
+        <img src="img/hobbies/videogames/heroes-of-might-magic-3-hd-edition.jpg" alt="heroes-of-might-magic-3-hd-edition">
+        <img src="img/hobbies/videogames/machinarium.jpg" alt="machinarium">
+        <img src="img/hobbies/videogames/theForest.webp" alt="theForest">
+        <img src="img/hobbies/videogames/the-witcher-3.jpg" alt="the-witcher-3">
+        <img src="img/hobbies/videogames/HollowKnight.jpg" alt="Hollow Knight">
+        <img src="img/hobbies/videogames/GeometryDash.jpg" alt="Geometry Dash">
+        <img src="img/hobbies/videogames/xxl.jpg" alt="xxl">
+        <img src="img/hobbies/videogames/horizon-zero-dawn.jpg" alt="horizon-zero-dawn">
+        <img src="img/hobbies/videogames/dota2.webp" alt="dota2">
+        <img src="img/hobbies/videogames/csgo.png" alt="csgo">
+        <img src="img/hobbies/videogames/cyberpunc.jpg" alt="cyberpunc">
+        <img src="img/hobbies/videogames/bloodborne.jpg" alt="bloodborne">
+      </div>
+    </section>
+  </main>
+</body>
+
+</html>

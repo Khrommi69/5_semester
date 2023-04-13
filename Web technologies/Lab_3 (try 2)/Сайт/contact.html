@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <script src="menu.js" defer></script>
+  <script defer src="contact.js"></script>
+  <script src="localStorageAndCookies.js"></script>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="style.css">
+  <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Контакты</title>
+</head>
+
+<body onload="updateLocalStorageAndCookies()">
+  <nav id="navHeader">
+    <ul id="navList">
+      <li> <h1> <a href="main.html"> Главная </a> </h1> </li>
+      <li> <h1> <a href="about_me.html"> Обо мне </a> </h1> </li>
+      <li> <h1> <a href="#" id="hobbiesDropdownMenu"> Мои интересы </a> </h1> </li>
+      <li> <h1> <a href="study.html"> Учёба </a> </h1> </li>
+      <li> <h1> <a href="album.html"> Фотоальбом </a> </h1> </li>
+      <li> <h1> <a href="contact.html"> Контакты </a> </h1> </li>
+      <li> <h1> <a href="test.html"> Тест по инженерной графике </a> </h1> </li>
+      <li> <h1> <a href="history.html"> История просмотра </a> </h1> </li>
+    </ul>
+  </nav>
+
+  <section id="mainInfo" class="contact mainForm">
+    <form onsubmit="return formOnSubmitValidation()" action="mailto:noidorga@gmail.com" method="post" >
+      <h2>Форма обратной связи</h2>
+      
+      <div class= "form-item">
+        <label for="name"> Ваше ФИО: </label>
+        <input type="text" size="50" placeholder="Введите ФИО" id="Name" name="Name" title="Фамилия, имя и отчество на русском языке, без знаков препинания" tabindex="-1">
+      </div>
+    
+      <div class= "form-item">
+        <p>Укажите Ваш пол:</p>
+        <p><input type="radio" name="Gender" value="male" tabindex="-1">Мужской</p>
+        <p><input type="radio" name="Gender" value="female" tabindex="-1">Женский</p>
+        <p><input type="radio" id="Gender" name="Gender" value="secret" checked="checked" tabindex="-1">Не выбран</p>
+      </div>
+    
+      <div class= "form-item">
+        <p>Укажите Ваш возраст:</p>
+        <select id="Age" name="Age" tabindex="-1">
+          <option value="" disabled selected>Укажите возраст:</option>
+          <option value="under14">Меньше 14</option>
+          <option value="14-17">14-17</option>
+          <option value="18-24">18-24</option>
+          <option value="25-35">25-35</option>
+          <option value="over35">Больше 35</option>
+        </select>
+      </div>
+
+      <label for="Birth-date" id="calendar"> Дата рождения:</label>
+      <input type="text" placeholder="..." id="Birth-date" name="Birth-date">
+
+      <div class= "form-item">
+        <p>Напишите сообщение: </p>
+        <textarea id="Message" name="Message" cols="50" rows="5" placeholder="Напишите ваше сообщение"></textarea>
+      </div>
+
+      <div class= "form-item">
+        <p>Укажите адрес электронной почты для обратной связи: </p>
+        <input type="email" size="50" placeholder="johndoe@example.com" id="Mail" name="Mail" tabindex="-1">
+      </div>
+      
+      <div class= "form-item">
+        <p>Укажите номер телефона: </p>
+        <input type="tel" size="20" placeholder="+79781234567" id="Phone-number" name="Phone-number" title="Номер должен начинаться на +, без пробелов" tabindex="-1">
+      </div>
+
+      <div class= "form-item">
+        <input type="reset" value="Очистить форму" tabindex="-1" onclick="didTapResetButton()">
+        <input type="submit" tabindex="-1">
+      </div>
+    </form>
+  </section>
+</body>
+</html>

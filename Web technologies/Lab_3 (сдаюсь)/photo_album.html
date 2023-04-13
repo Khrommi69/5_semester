@@ -1,0 +1,51 @@
+<!DOCTYPE html5>
+<html>
+
+<head>
+	<script defer src="js/main.js"></script>
+	<meta charset="utf-8">
+	<!-- определяет масштабирование страницы для мобильных устройств -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link type = "text/css" rel = "stylesheet" href = "css/main_style.css">
+	<title>Фотоальбом</title>
+</head>
+
+<body class="body">
+	<nav class="navigation_bar">
+		<ul id="navList">
+			<li id="home"><a href="index.html">Главная</a></li>
+			<li id="about"><a href="about_me.html">Обо мне</a></li>
+			<li id="myInterests">
+				<a href="my_interests.html" id="myInterestsLink">Мои интересы</a>
+				<div id="myInterestsMenu">
+					<ul>
+						<li><a href="#hobbies_list">Хобби</a></li>
+						<li><a href="#music_list">Музыка</a></li>
+						<li><a href="#films_list">Фильмы</a></li>
+					</ul>
+				</div>
+			</li>
+			<li id="study"><a href="study.html">Учеба</a></li>
+			<li id="photo"><a href="#">Фотоальбом</a></li>
+			<li id="contact"><a href="contact.html">Контакт</a></li>
+			<li id="test"><a href="test.html">Тест</a></li>
+		</ul>
+		<div class="date-time">
+			<span id="current-date"></span>
+			<span id="current-time"></span>
+		</div>
+	</nav>
+
+	<div class="info_segment">
+		<section class="text_info_segment">
+			<h1>Фотоальбом</h1>
+			<table class = "img_table">
+				<tbody>
+					<script type="text/javascript" src="js/photo_printer.js" defer></script>
+				</tbody>
+			</table>
+		</section>
+	</div>
+</body>
+
+</html>

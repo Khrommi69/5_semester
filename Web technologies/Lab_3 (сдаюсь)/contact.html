@@ -1,0 +1,155 @@
+<!DOCTYPE html5>
+<html>
+
+<head>
+	<script defer src="js/main.js"></script>
+	<script defer src="js/contact_check.js"></script>
+	<meta charset="utf-8">
+	<!-- определяет масштабирование страницы для мобильных устройств -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link type = "text/css" rel = "stylesheet" href = "css/main_style.css">
+	<title>Контакт</title>
+</head>
+
+<body class="body">
+	<nav class="navigation_bar">
+		<ul id="navList">
+			<li id="home"><a href="index.html">Главная</a></li>
+			<li id="about"><a href="about_me.html">Обо мне</a></li>
+			<li id="myInterests">
+				<a href="my_interests.html" id="myInterestsLink">Мои интересы</a>
+				<div id="myInterestsMenu">
+					<ul>
+						<li><a href="#hobbies_list">Хобби</a></li>
+						<li><a href="#music_list">Музыка</a></li>
+						<li><a href="#films_list">Фильмы</a></li>
+					</ul>
+				</div>
+			</li>
+			<li id="study"><a href="study.html">Учеба</a></li>
+			<li id="photo"><a href="photo_album.html">Фотоальбом</a></li>
+			<li id="contact"><a href="#">Контакт</a></li>
+			<li id="test"><a href="test.html">Тест</a></li>
+		</ul>
+		<div class="date-time">
+			<span id="current-date"></span>
+			<span id="current-time"></span>
+		</div>
+	</nav>
+
+	<!-- ФОРМА -->
+	<div class="info_segment">
+		<section class="text_info_segment">
+			<h1 class="form_title">Контакты</h1>
+
+			<form action="mailto:noname@gmail.com" method="post" class="contact_form">
+
+				<div class="input_block">
+					<label for="name">ФИО:</label>
+					<input type="text" name="name" id="name" placeholder="Иванов Иван Иванович" tabindex="-1">
+
+				<div class="input_block">
+					<label>Пол:</label>
+					<label for="male">М</label>
+					<input type="radio" name="gender" value="male" tabindex="-1">
+					<label for="female">Ж</label>
+					<input type="radio" name="gender" value="female" tabindex="-1">
+					<label for="other">Другой</label>
+					<input type="radio" name="gender" value="other" tabindex="-1" checked="checked">
+				</div>
+				
+				<div class="input_block">
+					<label for="age">Возраст:</label>
+					<input type="number" name="age" id="age" placeholder="18" min="0" max="150" tabindex="-1">
+				</div>
+
+				<!-- <div class="input_block">
+					<label for="Birth-date" id="calendar">Дата:</label>
+					<input type="text" id="Birth-date" name="Birth-date" placeholder="дд.мм.гггг." tabindex="-1">
+				</div> -->
+
+				<div class="input_block">
+					<label for="email">Email:</label>
+					<input type="email" name="email" id="email" placeholder="email@gmail.com" tabindex="-1">
+				</div>
+
+				<div class="input_block">
+					<label for="phone">Телефон:</label>
+					<input type="tel" name="phone" id="phone" placeholder="+7 777 777-77-77" tabindex="-1">
+				</div>
+
+				<div class="input_block">
+					<label for="message"></label>
+					<textarea name="message" id="message" rows=10 cols=50 placeholder="some text" tabindex="-1"></textarea>
+				</div>
+
+				<div class="button_block">
+					<input type="reset" value="Очистить форму"  tabindex="-1" onclick="didTapResetButton()">
+					<input type="submit" tabindex="-1" onclick="formOnSubmitValidation()">
+				</div>
+				<br><br><br>
+				<div class="error_box"></div>
+			</form>
+		</section>
+	</div>
+</body>
+
+</html>
+
+
+
+
+<!--   <section id="mainInfo" class="contact mainForm">
+    <form onsubmit="return formOnSubmitValidation()" action="mailto:noidorga@gmail.com" method="post" >
+      <h2>Форма обратной связи</h2>
+      
+      <div class= "form-item">
+        <label for="name"> Ваше ФИО: </label>
+        <input type="text" size="50" placeholder="Введите ФИО" id="Name" name="Name" title="Фамилия, имя и отчество на русском языке, без знаков препинания" tabindex="-1">
+      </div>
+    
+      <div class= "form-item">
+        <p>Укажите Ваш пол:</p>
+        <p><input type="radio" name="Gender" value="male" tabindex="-1">Мужской</p>
+        <p><input type="radio" name="Gender" value="female" tabindex="-1">Женский</p>
+        <p><input type="radio" id="Gender" name="Gender" value="secret" checked="checked" tabindex="-1">Не выбран</p>
+      </div>
+    
+      <div class= "form-item">
+        <p>Укажите Ваш возраст:</p>
+        <select id="Age" name="Age" tabindex="-1">
+          <option value="" disabled selected>Укажите возраст:</option>
+          <option value="under14">Меньше 14</option>
+          <option value="14-17">14-17</option>
+          <option value="18-24">18-24</option>
+          <option value="25-35">25-35</option>
+          <option value="over35">Больше 35</option>
+        </select>
+      </div>
+
+      <label for="Birth-date" id="calendar"> Дата рождения:</label>
+      <input type="text" placeholder="..." id="Birth-date" name="Birth-date">
+
+      <div class= "form-item">
+        <p>Напишите сообщение: </p>
+        <textarea id="Message" name="Message" cols="50" rows="5" placeholder="Напишите ваше сообщение"></textarea>
+      </div>
+
+      <div class= "form-item">
+        <p>Укажите адрес электронной почты для обратной связи: </p>
+        <input type="email" size="50" placeholder="johndoe@example.com" id="Mail" name="Mail" tabindex="-1">
+      </div>
+      
+      <div class= "form-item">
+        <p>Укажите номер телефона: </p>
+        <input type="tel" size="20" placeholder="+79781234567" id="Phone-number" name="Phone-number" title="Номер должен начинаться на +, без пробелов" tabindex="-1">
+      </div>
+
+      <div class= "form-item">
+        <input type="reset" value="Очистить форму" tabindex="-1" onclick="didTapResetButton()">
+        <input type="submit" tabindex="-1">
+      </div>
+    </form>
+  </section>
+</body>
+</html> -->

@@ -1,0 +1,70 @@
+$backgroundColor: #a9bcbb;
+$secondaryColor: #e8ecec;
+$primaryColor: #004640;
+$colorAccept: #66FFA5;
+$colorDeny: #E6B3B3;
+$font-face-gothic: 'Franklin Gothic', 'Arial Narrow', Arial, sans-serif;
+
+body {
+    font-family: $font-face-gothic;
+    background-color: $primaryColor !important;
+    margin: 0;
+    overflow: hidden;
+}
+
+#app {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    min-width: 30%;
+    max-width: 30%;
+    max-height: 90%;
+    text-align: center;
+    padding: 2rem;
+    margin: auto;
+    margin-top: 2%;
+    border-radius: 29px;
+    border: 1px solid $primaryColor;
+    background-color: $backgroundColor;
+}
+
+input {
+    padding: 0.5rem;
+    border-radius: 10px;
+    border: 2px solid $primaryColor;
+    background-color: $secondaryColor;
+    color: $primaryColor;
+}
+
+label, p {
+    margin: 1rem;
+    color: $primaryColor;
+    font-weight: bold;
+}
+
+%result {
+    padding: 0.5rem;
+    word-wrap: normal;
+    font-size: large;
+    color: $primaryColor;
+    border-radius: 10px;
+    border: 2px solid $primaryColor;
+}
+
+#resultError {
+    @extend %result;
+    background-color: $colorDeny;
+}
+
+#resultOk {
+    @extend %result;
+    background-color: $colorAccept;
+}

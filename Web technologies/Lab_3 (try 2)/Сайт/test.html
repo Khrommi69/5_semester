@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+  <script src="menu.js" defer></script>
+  <script defer src="test.js"></script>
+  <script src="localStorageAndCookies.js"></script>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="style.css">
+  <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Тест по инженерной графике</title>
+</head>
+<body onload="updateLocalStorageAndCookies()">
+  <nav id="navHeader">
+    <ul id="navList">
+      <li> <h1> <a href="main.html"> Главная </a> </h1> </li>
+      <li> <h1> <a href="about_me.html"> Обо мне </a> </h1> </li>
+      <li> <h1> <a href="#" id="hobbiesDropdownMenu"> Мои интересы </a> </h1> </li>
+      <li> <h1> <a href="study.html"> Учёба </a> </h1> </li>
+      <li> <h1> <a href="album.html"> Фотоальбом </a> </h1> </li>
+      <li> <h1> <a href="contact.html"> Контакты </a> </h1> </li>
+      <li> <h1> <a href="test.html"> Тест по инженерной графике </a> </h1> </li>
+      <li> <h1> <a href="history.html"> История просмотра </a> </h1> </li>
+    </ul>
+  </nav>
+
+  <section class="test">
+    <form enctype="text/plain" novalidate method="post" onsubmit="return validateForm()" action="mailto:noidorga@gmail.com">
+      <h2>Тест по инженерной графике</h2>
+
+      <div class="form-item">
+        <label for="ФИО">Ваше ФИО:</label>
+        <input type="text" size="50" placeholder="Введите ФИО" id="ФИО" name="name" title="Фамилия, имя и отчество на русском языке, без знаков препинания" tabindex="-1">
+      </div>
+
+      <div class="form-item">
+        <p>Выберите Вашу группу:</p>
+        <select id="Группа" name="group">
+            <option value="" disabled selected>Укажите Вашу группу:</option>
+          <optgroup label="1 курс">
+            <option value="1">ИТ/б-22-1-о </option>
+            <option value="2">ИТ/б-22-2-о </option>
+            <option value="3">ИТ/б-22-3-о </option>
+            <option value="4">ИТ/б-22-4-о </option>
+            <option value="5">ИТ/б-22-5-о </option>
+            <option value="6">ИТ/б-22-6-о </option>
+            <option value="7">ИТ/б-22-7-о </option>
+          </optgroup>
+          <optgroup label="2 курс">
+            <option value="8">ИС/б-21-1-о</option>
+            <option value="9">ИС/б-21-2-о</option>
+            <option value="10">ИС/б-21-3-о</option>
+            <option value="11">ПИ/б-21-1-о</option>
+          </optgroup>
+          <optgroup label="3 курс">
+            <option value="12">ИС/б-20-1-о</option>
+            <option value="13">ИС/б-20-2-о</option>
+            <option value="14">ПИ/б-20-1-о</option>
+          </optgroup>
+          <optgroup label="4 курс">
+            <option value="15">ИС/б-18-1-о</option>
+            <option value="16">ИС/б-18-2-о</option>
+            <option value="17">ПИ/б-18-1-о</option>
+          </optgroup>
+        </select>
+      </div>
+
+      <div class= "form-item">
+        <p>1) Кто считается основателем начертательной геометрии?</p>
+        <p><input type="radio" name="question1" value="Gaspar">Гаспар Монж</p>
+        <p><input type="radio" name="question1" value="Gerard">Жерар Дезарг</p>
+        <p><input type="radio" id="Вопрос№1" name="question1" value="Dubois">Арье Дюбуа</p>
+      </div>
+      
+      <div class= "form-item">
+        <p>2) Какой из этих видов чертежей определяет геометрическую форму (контур) изделия и координаты расположения составных частей?</p>
+        <select id="Вопрос№2" name="question2">
+          <option value="" disabled selected>Выберите ответ:</option>
+          <option value="assembly_drawing">Сборочный чертеж</option>
+          <option value="theoretical_drawing">Теоретический чертеж</option>
+          <option value="montage_drawing">Монтажный чертеж</option>
+          <option value="packaging_drawing">Упаковочный чертеж</option>
+        </select>
+      </div>
+
+      <div class= "form-item">
+        <p>3) Определение черчения: </p>
+        <textarea id="Вопрос№3" name="question3" cols="50"  placeholder="Черчение - это ..." title="Введите не более тридцати слов"></textarea>
+      </div>
+
+      <div class= "form-item">
+        <input type="reset" value="Очистить форму">
+        <input type="submit">
+      </div>
+
+    </form>
+  </section>
+</body>
+</html>

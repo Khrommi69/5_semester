@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <script defer src="history.js"></script>
+    <script src="localStorageAndCookies.js"></script>
+    <script src="menu.js" defer></script>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>История просмотра</title>
+  </head>
+  <body onload="updateLocalStorageAndCookies()">
+    <nav id="navHeader">
+      <ul id="navList">
+        <li> <h1> <a href="main.html"> Главная </a> </h1> </li>
+        <li> <h1> <a href="about_me.html"> Обо мне </a> </h1> </li>
+        <li> <h1> <a href="#" id="hobbiesDropdownMenu"> Мои интересы </a> </h1> </li>
+        <li> <h1> <a href="study.html"> Учёба </a> </h1> </li>
+        <li> <h1> <a href="album.html"> Фотоальбом </a> </h1> </li>
+        <li> <h1> <a href="contact.html"> Контакты </a> </h1> </li>
+        <li> <h1> <a href="test.html"> Тест по инженерной графике </a> </h1> </li>
+        <li> <h1> <a href="history.html"> История просмотра </a> </h1> </li>
+      </ul>
+    </nav>
+
+    <section class="history">
+        <h2> История за всё время </h2>
+        <table id="tableCurrentSession">
+          <thead>
+            <tr>
+              <th></th>
+              <th>Главная</th>
+              <th>Обо мне</th>
+              <th>Мои интересы</th>
+              <th>Учёба</th>
+              <th>Фотоальбом</th>
+              <th>Контакты</th>
+              <th>Тест по инженерной графике</th>
+              <th>История просмотра</th>
+            </tr>
+          </thead>
+    
+          <tbody>
+            <tr>
+              <th> Кол-во <br> посещений </th>
+              <td> 0 </td>
+              <td> 0 </td>
+              <td> 0 </td>
+              <td> 0 </td>
+              <td> 0 </td>
+              <td> 0 </td>
+              <td> 0 </td>
+              <td> 0 </td>
+            </tr>
+          </tbody>
+        </table>
+    
+        <br><br>
+        <h2> История текущего сеанса </h2>
+        <table id="tableAllSessions">
+          <thead>
+            <tr>
+              <th></th>
+              <th>Главная</th>
+              <th>Обо мне</th>
+              <th>Мои интересы</th>
+              <th>Учёба</th>
+              <th>Фотоальбом</th>
+              <th>Контакты</th>
+              <th>Тест по инженерной графике</th>
+              <th>История просмотра</th>
+            </tr>
+          </thead>
+    
+          <tbody>
+            <tr>
+              <th> Кол-во <br> посещений </th>
+              <td> 0 </td>
+              <td> 0 </td>
+              <td> 0 </td>
+              <td> 0 </td>
+              <td> 0 </td>
+              <td> 0 </td>
+              <td> 0 </td>
+              <td> 0 </td>
+            </tr>
+          </tbody>
+        </table>
+    </section>
+  </body>
+  
+  </html>
