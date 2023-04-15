@@ -1,12 +1,11 @@
 body {
   font-family: "Franklin Gothic", "Arial Narrow", Arial, sans-serif;
-  background-color: #004640 !important;
+  background-image: url("background.jpg") !important;
   margin: 0;
-  overflow: hidden;
+  overflow: auto;
 }
 
 #app {
-  position: fixed;
   top: 0;
   left: 0;
   bottom: 0;
@@ -24,22 +23,23 @@ form {
   padding: 2rem;
   margin: auto;
   margin-top: 2%;
+  margin-bottom: 100px;
   border-radius: 29px;
-  border: 1px solid #004640;
-  background-color: #a9bcbb;
+  border: 3px solid #000000;
+  background-color: #00c9ffde;
 }
 
 input {
   padding: 0.5rem;
-  border-radius: 10px;
-  border: 2px solid #004640;
+  border-radius: 15px;
+  border: 2px solid #000000;
   background-color: #e8ecec;
-  color: #004640;
+  color: #000000;
 }
 
 label, p {
   margin: 1rem;
-  color: #004640;
+  color: #000000;
   font-weight: bold;
 }
 
@@ -47,15 +47,15 @@ label, p {
   padding: 0.5rem;
   word-wrap: normal;
   font-size: large;
-  color: #004640;
+  color: #000000;
   border-radius: 10px;
-  border: 2px solid #004640;
+  border: 2px solid #000000;
 }
 
 #resultError {
-  background-color: #E6B3B3;
+  background-color: #ff000057;
 }
 
 #resultOk {
-  background-color: #66FFA5;
+  background-color: #44ff0094;
 }/*# sourceMappingURL=main.css.map */

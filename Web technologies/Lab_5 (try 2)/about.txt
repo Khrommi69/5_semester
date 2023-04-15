@@ -1,0 +1,84 @@
+C:\Program Files\nodejs\
+
+SASS - Syntactically Awesome StyleSheets
+SCSS - препроцессор основанный на CSS
+мощный и гибкий инструмент формирования стилей Web-сайтов/приложений
+
+SASS - нет {} и ;     SCSS - есть
+
+SCSS
+ПЕРЕМЕННЫЕ
+$some-color: #fce123;
+
+УСЛОВИЯ
+@if (<условие>) {
+ // команды выполняются, если <условие> истинно
+}
+@else {
+ // команды выполняются, если <условие> ложно
+}
+
+ЦИКЛЫ
+@for <переменная> from <старт> through <стоп> {
+ // тело цикла
+}
+
+@while <условие>{
+ // тело цикла с изменением шага
+}
+
+позволяет для каждого значения из определенного списка применить заданный набор команд
+@each <переменная> in <значение1>, < значение2>... {
+ // тело цикла
+}
+Переменная последовательно принимает значения из списка после
+ключевого слова in. Чтобы воспользоваться ее текущим значением, можно
+использовать конструкцию #{<переменная>}.
+
+ВЛОЖЕНИЯ СЕЛЕКТОРОВ
+.title {
+ strong {}
+ em {}
+}
+
+в случае с псевдоклассами/псевдоэлементами
+// SCSS
+.parent {                      CSS
+ &:hover {}               ==> .parent:hover {}
+}
+
+ПРИМЕСИ (аналог функций)
+@import @mixin @include
+
+@mixin border-radius($radius: 1px) {
+ -webkit-border-radius: $radius;
+ -moz-border-radius: $radius;
+ -ms-border-radius: $radius;
+ border-radius: $radius;
+}
+.box{
+ @include border-radius();
+}
+
+РАСШИРЕНИЯ
+browser {
+ min-height: 16px;
+ padding-left: 20px;
+ background-repeat: no-repeat;
+}
+.ie {
+ @extend .browser;
+ background-image: url(../img/browser_ie.png);
+}
+.cr {
+ @extend .browser;
+ background-image: url(../img/browser_cr.png);
+}
+.fx {
+ @extend .browser;
+ background-image: url(../img/browser_fx.png);
+}
+
+ЗАПОЛНЕНИЯ
+%browser {
+............

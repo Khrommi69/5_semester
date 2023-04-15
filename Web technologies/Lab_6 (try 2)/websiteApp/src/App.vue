@@ -12,30 +12,30 @@
             sexOptions: Object.freeze({
                 M: "М",
                 F: "Ж",
-                S: "?"
+                S: "паркет"
             }),
 
             frameWorksOptions: Object.freeze({
-                VUE: "Vue",
-                ANGULAR: "ANGULAR",
-                SVELTE: "SVELTE",
-                REACT: "REACT"
+                VUE: "котики",
+                ANGULAR: "муравьи",
+                SVELTE: "черви",
+                REACT: "человеки"
             }),
         }),
 
         computed: {
             errors() {
                 let errors = [];
-                if (!this.formData.name) errors.push("Введите имя! ");
+                if (!this.formData.name) errors.push("Введите ИМЯ, АЛО! ");
                 else errors.filter((error) => error.field !== "name");
                 
-                if (!this.formData.surname) errors.push("Введите Фамилию! ");
+                if (!this.formData.surname) errors.push("Введите ФАМИЛИЮ, АЛО! ");
                 else errors.filter((error) => error.field !== "surname");
                 
-                if ((!this.formData.age && typeof this.formData.age !== "number") || (this.formData.age < 1)) errors.push("Укажите возраст! " );
+                if ((!this.formData.age && typeof this.formData.age !== "number") || (this.formData.age < 1)) errors.push("Укажите цифры пожалуйста! " );
                 else errors.filter((error) => error.field !== "age");
                 
-                if (!this.formData.sex) errors.push("Укажите пол! ");
+                if (!this.formData.sex) errors.push("Какой у вас пол?! Надо бы указать...");
                 else errors.filter((error) => error.field !== "sex");
                 
                 let result = Array.from(errors.values()).join(" ");
@@ -47,9 +47,9 @@
                 return "" 
                   + this.formData.name + " " 
                   + this.formData.surname + " " 
-                  + this.formData.age + " лет от роду " 
-                  + this.formData.sex + " пола" 
-                  + ((this.formData.frameworks != "") ? ", использует " + this.formData.frameworks.join(", ") : "")
+                  + " с уровнем IQ равным - " + this.formData.age
+                  + ", является представителем \"" + this.formData.sex  + "\" пола"
+                  + ((this.formData.frameworks != "") ? ". Так же ему известны кто такие " + this.formData.frameworks.join(", ") : "")
                   + ".";
             }
         },
@@ -58,7 +58,7 @@
             checkAndSubmitForm: function(event) {
                 if (this.errors != "") event.preventDefault();
                 else {
-                  window.location.href = "mailto:rodiongladyshev@gmail.com?subject=Form&body=" + this.result;
+                  window.location.href = "mailto:danilkhromdewil@gmail.com?subject=Form&body=" + this.result;
                 }
             }
         }
@@ -67,13 +67,13 @@
 
 <template>
     <form novalidate="true">
-        <label for="firstname"> Имя </label> 
+        <label for="firstname"> ВВЕДИТЕ ИМЯ </label> 
         <input type="text" v-model="formData.name" id="firstname"/>
         
-        <label for="surname"> Фамилия </label>
+        <label for="surname"> ВВЕДИТЕ ФАМИЛИЮ </label>
         <input type="text" v-model="formData.surname" id="surname"/>
         
-        <label for="age"> Возраст </label>
+        <label for="age"> УКАЖИТЕ СВОЙ IQ (по результатам iq-теста из VK) </label>
         <input type="number" v-model="formData.age" id="age"/>
         
         <br><br>

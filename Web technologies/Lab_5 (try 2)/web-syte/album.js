@@ -49,8 +49,8 @@ function setListeners(grid) {
                 });
                 image.show("fast");
                 div.children(".imageDescription")
-                    .prepend(`<img alt="prev" class="arrow" style="transform:rotate(180deg);" src="img/arrow-next-icon.svg">`)
-                    .append (`<img alt="next" class="arrow" src="img/arrow-next-icon.svg">`);
+                    .prepend(`<img alt="prev" class="arrow" src="img/left.png">`)
+                    .append (`<img alt="next" class="arrow" src="img/right.png">`);
                     
                     grid.append(div);
                     div.children(".imageDescription").children("[alt='prev']").click(e => clickPrev(e));

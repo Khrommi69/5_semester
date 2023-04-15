@@ -6,7 +6,7 @@ body {
   padding: 0;
   overflow-x: auto;
   min-width: 1000px;
-  background-color: #a9bcbb;
+  background-image: url("img/background.jpg");
   background-attachment: fixed;
   background-size: cover;
   color: #004640;
